@@ -1,0 +1,24 @@
+<div class="proteinItem" (dblclick)="openProteinModal(title)" *ngIf="score > minScoreVisible && score < maxScoreVisible">
+	<div class="listItemBtns">
+		<div class="listItemBtn" (click)="openProteinModal(title)">
+			<i class="fa fa-eye" aria-hidden="true"></i> Protein
+		</div>
+		<div class="listItemBtn">
+			<i class="fa fa-list-ul" aria-hidden="true"></i> Peptides
+		</div>
+	</div>
+	<div class="proteinItemBG"></div>
+	<div class="proteinItemInside">
+		<div class="proteinBarContainer">
+			<div class="proteinBarLeft" [style.width]="((fdr/maxFdr)*100)+'%'"></div>
+			<div class="proteinBarBG"></div>
+			<div class="proteinValueLeft">{{ fdr.toString() | limitTo:5 }}</div>
+		</div>
+		<div class="proteinItemTitle">{{ title }}</div>
+		<div class="proteinBarContainer">
+			<div class="proteinBarRight" [style.width]="((score/maxScore)*100)+'%'"></div>
+			<div class="proteinBarBG"></div>
+			<div class="proteinValueRight">{{ score.toString() | limitTo:5 }}</div>
+		</div>
+	</div>
+</div>

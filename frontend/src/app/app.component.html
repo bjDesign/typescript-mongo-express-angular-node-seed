@@ -1,0 +1,11 @@
+<app-modal-dialog *ngIf="showModal" [dialogTitle]='dialogTitle' [dialogType]='dialogType'></app-modal-dialog>
+<div class="appScreen">
+	<section>
+		<app-header></app-header>
+		<!-- <app-breadcrumb-nav></app-breadcrumb-nav> -->
+	</section>
+	<section>
+		<!-- (activate)="onActivate($event, outlet)" -->
+		<router-outlet #outlet></router-outlet>
+	</section>
+</div>

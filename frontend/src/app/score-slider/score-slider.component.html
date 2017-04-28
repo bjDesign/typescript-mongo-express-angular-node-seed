@@ -1,0 +1,40 @@
+<div class="scoreSliderHolder">
+	<div class="scoreSliderFull">
+		<div class="sliderValueTop" [style.left]="currentMinScorePosition+'%'">
+			<div class="sliderValueTopInside">
+				{{ currentMinValue.toString() | limitTo:5  }}
+			</div>
+		</div>
+		<div class="sliderValueTop" [style.left]="currentMaxScorePosition+'%'">
+			<div class="sliderValueTopInside">
+				{{ currentMaxValue.toString() | limitTo:5  }}
+			</div>
+		</div>
+		<div class="sliderValueBottom" [style.left]="currentMinScorePosition+'%'">
+			<div class="sliderValueBottomInside">
+				{{ currentMinFDR.toString() | limitTo:5 }}
+			</div>
+		</div>
+		<div class="sliderValueBottom" [style.left]="currentMaxScorePosition+'%'">
+			<div class="sliderValueBottomInside">
+				{{ currentMaxFDR.toString() | limitTo:5 }}
+			</div>
+		</div>
+		<div class="scoreSliderScoreKey">
+			Score
+		</div>
+		<div class="scoreSliderFdrKey">
+			FDR
+		</div>
+		<div class="scoreSliderMin">
+			{{ sliderMin }}
+		</div>
+		<div class="scoreSliderMax">
+			{{ sliderMax }}
+		</div>
+		<p-slider [min]="sliderMin" [max]="sliderMax" [(ngModel)]="rangeValues" [range]="true" (onChange)="sliderChange($event)"></p-slider>
+	</div>
+</div>
+
+
+

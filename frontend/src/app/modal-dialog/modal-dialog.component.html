@@ -1,0 +1,20 @@
+<div class="modalContainer">
+	<div class="modalBG" (click)="hideModal()"></div>
+	<div class="modalDialog">
+	<div class="modalHeader">
+		<div class="modalHeaderTitle">{{ dialogTitle }}: At a Glance</div>
+	</div>
+	<div class="modalContentInside">
+		
+	</div>
+	<div class="modalBottomBtns" *ngIf="dialogType==='protein'">
+		<div class="modalBottomBtn green1BG whiteText"><i class="fa fa-download" aria-hidden="true"></i> Save Results</div>
+		<div class="modalBottomBtn ltBlueBG whiteText"><i class="fa fa-list-ul" aria-hidden="true"></i> View Peptides</div>
+		<div class="modalBottomBtn" (click)="hideModal()">Cancel</div>			
+	</div>
+	<div class="modalBottomBtns" *ngIf="dialogType==='peptide'">
+		<div class="modalBottomBtn green1BG whiteText"><i class="fa fa-download" aria-hidden="true"></i> Save Results</div>
+		<div class="modalBottomBtn ltBlueBG whiteText"><i class="fa fa-list-ul" aria-hidden="true"></i> Peptide Evidence</div>
+		<div class="modalBottomBtn" (click)="hideModal()">Cancel</div>			
+	</div>
+</div>
